@@ -12,4 +12,12 @@ function showPage(pageId) {
     }
 
     window.scrollTo(0, 0);
+
+    var music = document.getElementById("bgMusic");
+
+    if (music) {
+        music.play().catch(function(error) {
+            console.log("Music could not play:", error);
+        });
+    }
 }
