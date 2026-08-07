@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, sans-serif;
+background: linear-gradient(135deg, #dff4ff, #f4fbff);
+color: #23445c;
+min-height: 100vh;
+overflow-x: hidden;
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+.background {
+position: fixed;
+inset: 0;
+overflow: hidden;
+pointer-events: none;
+z-index: -1;
+}
+
+.background span {
+position: absolute;
+font-size: 25px;
+opacity: 0.25;
+animation: float 7s ease-in-out infinite;
+}
+
+.background span:nth-child(1) {
+left: 10%;
+top: 15%;
+}
+
+.background span:nth-child(2) {
+left: 80%;
+top: 10%;
+animation-delay: 1s;
+}
+
+.background span:nth-child(3) {
+left: 20%;
+top: 75%;
+animation-delay: 2s;
+}
+
+.background span:nth-child(4) {
+left: 85%;
+top: 70%;
+animation-delay: 3s;
+}
+
+.background span:nth-child(5) {
+left: 50%;
+top: 8%;
+animation-delay: 4s;
+}
+
+.background span:nth-child(6) {
+left: 65%;
+top: 85%;
+animation-delay: 5s;
+}
+
+@keyframes float {
+0%, 100% {
+transform: translateY(0);
+}
+
+50% {
+    transform: translateY(-25px);
+}
+
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container {
+width: 100%;
+max-width: 700px;
+min-height: 100vh;
+margin: auto;
+padding: 30px 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* =========================
+PAGES
+========================= */
+
+.page {
+display: none;
+width: 100%;
+padding: 35px 25px;
+background: rgba(255, 255, 255, 0.78);
+border-radius: 30px;
+box-shadow: 0 20px 60px rgba(61, 132, 170, 0.15);
+backdrop-filter: blur(15px);
+text-align: center;
+
+animation: pageIn 0.6s ease;
+
+}
+
+.page.active {
+display: block;
+}
+
+@keyframes pageIn {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+}
+
+/* =========================
+TEXT
+========================= */
+
+.eyebrow {
+font-size: 0.75rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: #6098b9;
+margin-bottom: 15px;
+}
+
+h1 {
+color: #174f78;
+font-size: clamp(2.2rem, 8vw, 4rem);
+line-height: 1.1;
+margin-bottom: 20px;
+}
+
+h2 {
+color: #245d84;
+font-size: clamp(1.6rem, 6vw, 2.4rem);
+line-height: 1.2;
+margin-bottom: 25px;
+}
+
+p {
+line-height: 1.8;
+color: #38576c;
+}
+
+.intro {
+max-width: 500px;
+margin: auto;
+}
+
+.story {
+text-align: left;
+max-width: 600px;
+margin: auto;
+}
+
+.story p {
+margin-bottom: 20px;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+button {
+border: none;
+padding: 14px 25px;
+border-radius: 999px;
+background: linear-gradient(135deg, #65b9e7, #398fc5);
+color: white;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+margin-top: 15px;
+
+box-shadow: 0 10px 25px rgba(55, 143, 197, 0.25);
+transition: 0.25s ease;
+
+}
+
+button:hover {
+transform: translateY(-3px);
+}
+
+button:active {
+transform: scale(0.96);
+}
+
+/* =========================
+PHOTOS
+========================= */
+
+.photo-card {
+max-width: 520px;
+margin: 20px auto;
+padding: 7px;
+border-radius: 25px;
+background: white;
+box-shadow: 0 15px 40px rgba(50, 120, 155, 0.15);
+}
+
+.photo-card img {
+width: 100%;
+display: block;
+border-radius: 20px;
+}
+
+.photo-caption {
+margin: 20px auto;
+font-style: italic;
+color: #63869d;
+}
+
+/* =========================
+VIDEO
+========================= */
+
+.video-card {
+width: 100%;
+max-width: 520px;
+margin: 25px auto;
+padding: 7px;
+
+background: white;
+border-radius: 25px;
+box-shadow:
+    0 15px 45px rgba(42, 116, 155, 0.20);
+overflow: hidden;
+
+}
+
+.video-card video {
+width: 100%;
+display: block;
+
+border-radius: 19px;
+background: #07141f;
+max-height: 70vh;
+object-fit: contain;
+
+}
+
+.video-story {
+margin-top: 25px;
+}
+
+.video-ending {
+text-align: center;
+color: #5c88a3;
+margin-top: 25px;
+}
+
+/* =========================
+QUESTION
+========================= */
+
+.question h1 {
+margin-bottom: 15px;
+}
+
+.question > p {
+max-width: 450px;
+margin: auto;
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+gap: 12px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.buttons button {
+min-width: 150px;
+}
+
+.yes {
+background: linear-gradient(135deg, #5ab6e7, #3188bd);
+}
+
+.time {
+background: white;
+color: #5a7f97;
+border: 1px solid #cce5f3;
+box-shadow: none;
+}
+
+/* =========================
+FINAL
+========================= */
+
+.big-heart {
+font-size: 4rem;
+animation: heartbeat 1.7s infinite;
+}
+
+@keyframes heartbeat {
+0%, 100% {
+transform: scale(1);
+}
+
+50% {
+    transform: scale(1.12);
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+.container {
+    padding: 15px 10px;
+}
+.page {
+    padding: 30px 20px;
+    border-radius: 25px;
+}
+h1 {
+    font-size: 2.3rem;
+}
+h2 {
+    font-size: 1.7rem;
+}
+p {
+    font-size: 0.95rem;
+}
+.video-card {
+    border-radius: 20px;
+    padding: 5px;
+}
+.video-card video {
+    border-radius: 16px;
+    max-height: 60vh;
+}
+.buttons {
+    flex-direction: column;
+}
+.buttons button {
+    width: 100%;
+}
+button {
+    width: 100%;
+    max-width: 320px;
+}
+
+}
